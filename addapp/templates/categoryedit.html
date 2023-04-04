@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Category Details</h2>
+    
+    {% for i in data %}
+    <form action="{% url 'update1' id=i.id %}" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <label for="cname">:Category Name:</label><br>
+      <input type="text" id="cname" name="cname" value=" "><br><br><br>
+      <input type="file"  name="cimage" ><br><br>
+      <input type="submit" value="Submit">
+    </form>
+    
+    {% endfor %}
+</body>
+</html>

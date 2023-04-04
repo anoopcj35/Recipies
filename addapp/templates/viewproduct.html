@@ -1,0 +1,50 @@
+{% extends 'adminindex.html' %}
+<!DOCTYPE html>
+<html>
+{% block content %}
+<style>
+  th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #DDD;
+}
+</style>
+<body>
+
+<h2 style="text-align: center;">Recipe Data</h2><hr>
+{% csrf_token %}
+<table>
+  <tr>
+    
+    <th>Recipe Name</th>
+    <th>Recipe Ingredients</th>
+    <th>Recipe price</th>
+    <th>Images</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    
+  </tr>
+
+  {% for i in data %}
+  <tr>
+     
+    <td>{{ i.recipename }}</td>
+    <td>{{ i.recipeingredients }}</td>
+    <td>{{ i.recipeprice }}</td>
+    <td><img src="{{ i.image.url }}" style="width: 50px; height: 50px;"></td>
+    
+    <td><a href="{% url 'edit' id=i.id %}"><button type="button" >Edit</button></a></td>
+    <td><a href="{% url 'delete' id=i.id %}"><button type="button" >Delete</button></a></td>
+ 
+ 
+    
+  </tr>
+  {% endfor %}
+  
+</table>
+
+
+{% endblock %}
+</body>
+</html>
+

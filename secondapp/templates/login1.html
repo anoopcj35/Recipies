@@ -1,0 +1,41 @@
+{% extends 'contact.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+</head>
+{% block content %}
+<style>
+    form{
+        text-align: center;
+     }
+     
+</style>
+<body>
+
+
+
+<h4 style="text-align: center;">Login Page</h4><br>
+
+<form action="{% url 'memberlogin' %}" method="POST">
+{% csrf_token %}
+  <label for="user">Username name:</label><br>
+  <input type="text" id="user" name="user" value="" placeholder="username"><br><br>
+  <label for="pword">Password:</label><br>
+  <input type="password" id="pword" name="pword" value="" placeholder="password"><br><br> 
+  <input type="submit" value="Submit"><br>
+ 
+</form><br><br><br><br>
+
+                                            
+
+<p>{{msg}}</p>
+{% endblock %}
+
+
+</body>
+</html>
+    

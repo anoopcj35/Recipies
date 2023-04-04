@@ -1,0 +1,47 @@
+{% extends 'contact.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+{% block content %}
+<style>
+    form{
+        text-align: center;
+     }
+     
+</style>
+
+<body>
+    <h4 style="text-align: center;">Register Page</h4><br><br>
+
+<form action="{% url 'regdata' %}" method="POST">
+{% csrf_token %}
+
+
+  <!--label for="user">User Name:</label><br>
+  <input type="text" id="user" name="user" value="" ><br><br>
+  <label for="pword">Password:</label><br>
+  <input type="text" id="pword" name="pword" value="" ><br><br-->
+  <label for="fn">First Name:</label><br>
+  <input type="text" id="fn" name="fn" value="" ><br><br>
+  <label for="mn">Middle Name:</label><br>
+  <input type="text" id="mn" name="mn" value="" ><br><br>
+  <label for="ln">Last Name</label><br>
+  <input type="text" id="ln" name="ln" value="" ><br><br>
+  <label for="ag">Age :</label><br>
+  <input type="text" id="ag" name="ag" value="" ><br><br>
+  <label for="add">Address:</label><br>
+  <input type="text" id="add" name="add" value="" ><br><br>
+  <label for="pn">Phone Number:</label><br>
+  <input type="text" id="pn" name="pn" value="" ><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+{% endblock %}
+    
+</body>
+</html>

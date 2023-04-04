@@ -1,0 +1,23 @@
+{% extend 'adminindex.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category</title>
+</head>
+<body>
+    <h2 style="text-align:center;">Category Details</h2>
+
+<form action="{% url 'cat2' %}" method="POST" enctype="multipart/form-data" style="text-align: center;">
+  {% csrf_token %}
+  <label for="cname">:Category Name:</label><br>
+  <input type="text" id="cname" name="cname" value=" "><br>
+  <label >Image:</label><br>
+  <input type="file"  name="cimage" ><br><br>
+  <input type="submit" value="Submit">
+</form>
+    
+</body>
+</html>

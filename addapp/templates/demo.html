@@ -1,0 +1,27 @@
+{% extends 'sample.html' %}
+{% block content %}
+<h2> Hello! </h2>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>HTML Forms</h2>
+ 
+<form action=" "method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+  <label for="pname">Product name:</label><br>
+  <input type="text" id="fname" name="pname" value=" "><br>
+  <label for="pprice">Product price:</label><br>
+  <input type="text" id="lname" name="pprice" value=" "><br><br>
+  <input type="file"  name="img"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+ 
+  
+
+</body>
+</html>
+
+
+{% endblock %}
